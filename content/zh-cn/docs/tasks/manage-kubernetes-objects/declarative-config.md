@@ -1491,7 +1491,7 @@ configuration involves several manual steps:
 1. Set the `kubectl.kubernetes.io/last-applied-configuration` annotation on the object:
 
     ```shell
-    kubectl replace -save-config -f <kind>_<name>.yaml
+    kubectl replace --save-config -f <kind>_<name>.yaml
     ```
 
 1. Change processes to use `kubectl apply` for managing the object exclusively.
@@ -1501,7 +1501,7 @@ configuration involves several manual steps:
 1. 在对象上设置 `kubectl.kubernetes.io/last-applied-configuration` 注解： 
 
     ```shell
-    kubectl replace -save-config -f <kind>_<name>.yaml
+    kubectl replace --save-config -f <kind>_<name>.yaml
     ```
 
 1. 自此排他性地使用 `kubectl apply` 来管理对象。
@@ -1532,7 +1532,7 @@ used only by the controller selector with no other semantic meaning.
 ```yaml
 selector:
   matchLabels:
-      controller-selector: "apps/v1/deployment/nginx"
+    controller-selector: "apps/v1/deployment/nginx"
 template:
   metadata:
     labels:
